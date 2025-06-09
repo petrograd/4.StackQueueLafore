@@ -61,7 +61,6 @@ public class StackApp {
         while (!theStack.isEmpty()) {
             long v = theStack.pop();
             System.out.print(v + "  ");
-
         }
         System.out.println();
 
@@ -74,8 +73,5 @@ public class StackApp {
         } catch (StackUnderflowException e) {
             System.out.println(e.getMessage());
         }
-
-
-
     }
 }
