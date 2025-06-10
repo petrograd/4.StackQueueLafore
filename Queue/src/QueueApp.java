@@ -28,6 +28,15 @@ class Queue {
     public long peekFront() {
         return queArray[front];
     }
+    public boolean isEmpty() {
+        return nItems == 0;
+    }
+    public boolean isFull() {
+        return nItems == maxSize;
+    }
+    public int size() {
+        return nItems;
+    }
 
 }
 
