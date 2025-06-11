@@ -1,3 +1,5 @@
+import java.util.Random;
+
 class Queue {
     private int maxSize;
     private long[] queArray;
@@ -28,7 +30,7 @@ class Queue {
     public long peekFront() {
         return queArray[front];
     }
-    public boolean isEmpty() {
+    public boolean isEmpty() {  // true if queue is empty
         return nItems == 0;
     }
     public boolean isFull() {
@@ -41,5 +43,31 @@ class Queue {
 }
 
 public class QueueApp {
+    public static void main(String[] args) {
 
+        Random random = new Random();
+
+        Queue theQueue = new Queue(5);
+        for (int i = 0; i < 5; i++) {
+
+            theQueue.insert(random.nextInt(11) * 10);
+
+        }
+        theQueue.remove();
+        theQueue.remove();
+        theQueue.remove();
+
+        for (int i = 0; i < 5; i++) {
+
+            theQueue.insert((int)(Math.random() * 11) * 10);
+
+        }
+
+        System.out.println("size " + theQueue.size());
+        while(!theQueue.isEmpty()) {
+            long n = theQueue.remove();
+            System.out.print(n + " ");
+        }
+
+    }
 }
