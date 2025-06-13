@@ -17,6 +17,7 @@ class Queue {
             rear = -1;
         }
         queArray[++rear] = val;
+        System.out.println("insert " + val + " at pos: " + rear);
         nItems++;
     }
     public long remove() {
@@ -39,9 +40,9 @@ class Queue {
         int ind =  rear;
         for (int i = 0; i < nItems; i++) {
             System.out.print(queArray[ind] + " ");
-            ind++;
-            if (ind == maxSize)
-                ind = 0;
+            ind--;
+            if (ind == -1)
+                ind = maxSize-1;
 
         }
         System.out.println();
@@ -54,9 +55,18 @@ public class QueueApp {
         for (int i = 0; i < 10; i++) {
             long val = (long)(Math.random()* 11) * 10;
             theQueue.insert(val);
-            System.out.print(val + " ");
+           // System.out.print(val + " ");
         }
         System.out.println();
+        System.out.println("front: " + theQueue.peekFront() );
+        theQueue.display();
+
+        System.out.println("remove " + theQueue.remove());
+        System.out.println("remove " + theQueue.remove());
+
+
+        theQueue.insert(10);
+
         theQueue.display();
     }
 }
