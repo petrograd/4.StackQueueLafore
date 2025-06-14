@@ -12,15 +12,19 @@ class Deque {
         rear = -1;
         nItems = 0;
     }
+    //add to front
     public void insertLeft(long val) {
 
     }
+    //add to back
     public void insertRight(long val) {
 
     }
+    //remove from front
     public long removeLeft() {
         return 0;
     }
+    //remove from back
     public long removeRight() {
         return 0;
 
@@ -30,6 +34,9 @@ class Deque {
     }
     public boolean isFull() {
         return nItems == maxSize;
+    }
+    public int size() {
+        return nItems;
     }
 
 }
